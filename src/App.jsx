@@ -10,7 +10,7 @@ function App() {
 
   const handleSearch = () => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=5ee6f96a413445b889911145220402&q=${city}&lang=pt`
+      `https://api.weatherapi.com/v1/current.json?key=5ee6f96a413445b889911145220402&q=${city}&lang=pt`
     )
       .then(response => {
         if (response.status === 200) {
