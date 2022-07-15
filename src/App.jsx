@@ -1,43 +1,40 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [city, setCity] = useState('')
+
+  const handleChange = () => {
+
+  }
+  
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
+    <div>
+      <nav className='navbar navbar-expand-md navbar-dark  bg-dark mb-4'>
+        <a className='navbar-brand text-whithe' href='#top'> Oi clima</a>
+      </nav>
+
+      <main className='container'>
+        <div className='bg-light -5'>
+          <h1>
+            Verifique a previsão do tempo da sua cidade!
+          </h1>
+          <p className='lead'>Digite sua cidade e pesquise!</p>
+
+          <div className='row mb-4'>
+            <div className='col-md-6'>
+              <input 
+              onChange={handleChange}
+              className='form-control' value={city}/>
+            </div>
+          </div>
+
+          <button className='btn btn-primary btn-lg mb-4'>
+            Pesquisar
           </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+        </div>
+      </main>
     </div>
   )
 }
