@@ -2,10 +2,18 @@ import { useState } from 'react'
 
 
 function App() {
-  const [city, setCity] = useState('')
+  const [city, setCity] = useState("")
 
-  const handleChange = () => {
+  const handleChange = (e) => {
+    setCity(e.target.value)
 
+  }
+
+  const handleSearch = () => {
+    fetch(`http://api.weatherapi.com/v1/current.json?key=5ee6f96a413445b889911145220402&q=${city}&lang=pt`)
+    .then((response) => {
+        console.log
+    })
   }
   
 
@@ -30,7 +38,7 @@ function App() {
             </div>
           </div>
 
-          <button className='btn btn-primary btn-lg mb-4'>
+          <button onClick={handleSearch} className='btn btn-primary btn-lg mb-4'>
             Pesquisar
           </button>
         </div>
